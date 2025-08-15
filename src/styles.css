@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+input[type="file"] {
+  margin: 1rem 0;
+}
+
+.buttons button {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.buttons button[type="button"] {
+  background-color: #f44336;
+}
+
+button:disabled {
+  background-color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+.preview img, .result img {
+  max-width: 100%;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}
