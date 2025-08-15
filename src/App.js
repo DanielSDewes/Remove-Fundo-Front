@@ -33,7 +33,7 @@ function App() {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch("http://127.0.0.1:8000/remove-background/", {
+      const response = await fetch("https://api-remove-background.railway.app/remove-background/", {
         method: "POST",
         body: formData,
       });
@@ -63,14 +63,28 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Remover Fundo da Imagem</h1>
+      <h1>Remover Background</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleFileChange}
-          ref={fileInputRef}
-        />
+        <div className="upload-button-wrapper">
+          <button
+            type="button"
+            className="upload-button"
+            onClick={() => fileInputRef.current && fileInputRef.current.click()}
+          >
+            <img
+              src="/resources/upload_icon.png"
+              alt="Upload"
+              className="upload-icon"
+            />
+          </button>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleFileChange}
+            ref={fileInputRef}
+            style={{ display: "none" }} // Esconde o input padrão
+          />
+        </div>
         <div className="buttons">
           <button type="submit" disabled={loading}>{loading ? "Processando..." : "Remover Fundo"}</button>
           <button type="button" onClick={handleClear}>Limpar</button>
@@ -91,7 +105,13 @@ function App() {
           <h2>Resultado:</h2>
           <img src={resultImage} alt="Sem fundo" />
           <a href={resultImage} download="imagem_sem_fundo.png">
-            <button>Baixar Imagem</button>
+            <button className="download-button">
+              <img
+                src="/resources/download_icon.png"
+                alt="Download"
+                className="download-icon"
+              />
+            </button>
           </a>
         </div>
       )}

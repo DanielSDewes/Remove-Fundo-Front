@@ -1,8 +1,11 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f4f8;
+  background: linear-gradient(to bottom, #007BFF, #28A745); /* Gradiente azul para verde */
+  background-size: cover; /* Garante que o gradiente ocupe toda a área */
+  background-attachment: fixed; /* Fixa o gradiente no fundo */
   margin: 0;
   padding: 0;
+  min-height: 100vh; /* Garante que o fundo ocupe pelo menos 100% da altura da viewport */
 }
 
 .container {
@@ -29,8 +32,17 @@ input[type="file"] {
   cursor: pointer;
 }
 
+.buttons button:hover {
+  background-color: #45a049;
+}
+
+
 .buttons button[type="button"] {
   background-color: #f44336;
+}
+
+.buttons button[type="button"]:hover {
+  background-color: #e53935;
 }
 
 button:disabled {
@@ -47,4 +59,37 @@ button:disabled {
 .error {
   color: red;
   margin-top: 1rem;
+}
+
+.upload-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.upload-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.upload-icon {
+  width: 15rem; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+  display: block;
+}
+
+.download-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.download-icon {
+  width: 15rem;
+  height: auto;
+  display: block;
 }
